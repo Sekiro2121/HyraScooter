@@ -6,6 +6,36 @@
     <title>Log in</title>
 </head>
 <body>
-    
+    <form id="myUser">
+        <label for="mail/username">Please enter your email or username:</label><!--frågar om din email-->
+        <input type="text" id="mail/username" name="mail/username">
+        <br>
+        <label for="password">Enter your password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        let username = null;
+        const form = document.getElementById('myUser');
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            const text = document.getElementById('mail/username').value;
+            const password = document.getElementById('password').value;
+
+            console.log(text + password);
+
+            if(text == "Sekiro21"  && password == "Sekiro"){
+                username == text;
+
+                window.location.href = `hyraScooter.html?username=${encodeURIComponent(username)}`;
+            }
+            else {
+                alert("Fel användarnamn eller lösnord!");
+            }
+        })
+    </script>
+
 </body>
 </html>
