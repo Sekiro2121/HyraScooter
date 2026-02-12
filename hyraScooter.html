@@ -5,9 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyra scooter</title>
 </head>
-
-
 <body>
     
+    <h2 id="välkommen"></h2>
+
+    <button id="hyra"> <img src="" alt="">Hyra scooter</button>
+    <button id="hyr5min" style="display: none;">Hyr 5 minuter</button>
+    <button id="hyr30min" style="display: none;"> Hyr 30 minuter </button>
+    <p id="output"></p>
+    <script>
+        let utText = 0;
+        let utKr = 0;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        document.getElementById('välkommen').innerText = `Välkommen, ${username}!`;
+
+        const hyra = document.getElementById('hyra');
+        const hyr5min = document.getElementById('hyra5min');
+        const hyr30min = document.getElementById('hyra30min');
+        const text = document.getElementById('output');
+
+        if (!username) {
+            window.location.href = 'hyraScooter.html';
+        }
+        else{
+            document.getElementById('hyra').addEventListener('click', function () {
+                alert('Du har hyrt en bil. Tryck igen för att bestämma hur länge du vill hyra bilen!');
+
+                hyra.style.display = 'none';
+                hyr5min.style.display = 'block';
+                hyr30min.style.display = 'block';
+
+            });
+            document.getElementById('välkommen').textContent = `Welcome, ${username}!`;
+        }
+        document.getElementById('hyr5min').addEventListener('click', function (){
+            utKr += 10;
+            utText += 5;
+        
+            text.textContent = utText + " minuter = " + utKr + " kr "
+        })
+        
+    </script>
 </body>
 </html>

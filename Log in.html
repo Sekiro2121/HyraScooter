@@ -10,7 +10,7 @@
         <label for="mail/username">Please enter your email or username:</label><!--frågar om din email-->
         <input type="text" id="mail/username" name="mail/username">
         <br>
-        <label for="password">Enter your password:</label>
+        <label for="password">Enter your password:</label> <!-- frågar efter lösenord-->
         <input type="password" id="password" name="password">
         <br>
         <input type="submit" value="submit">
@@ -26,12 +26,12 @@
 
             console.log(text + password);
 
-            if(text == "Sekiro21"  && password == "Sekiro"){
+            if(text == "Sekiro21"  && password == "Sekiro"){ // användarnamnet är Sekiro21 och lösenordet är Sekiro som är skrivit in så är det sant
                 username == text;
 
-                window.location.href = `hyraScooter.html?username=${encodeURIComponent(username)}`;
+                window.location.href = `hyraScooter.html?username=${encodeURIComponent(username)}`; // när det är sant så flyttas man till hemsidan hyraScooter
             }
-            else {
+            else { // annars skrivs detta ut
                 alert("Fel användarnamn eller lösnord!");
             }
         })
