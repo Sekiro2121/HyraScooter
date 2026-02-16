@@ -45,7 +45,12 @@
             utText += 5;
         
             text.textContent = utText + " minuter = " + utKr + " kr "
-        })
+        });
+        document.getElementById('hyra30min').addEventListener('click', function(){
+            utKr += 60;
+            utText += 30;
+            text.textContent = utText + " minuter = " + utKr + " kr ";
+        });
         
     </script>
 </body>
