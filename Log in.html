@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Log in</title>
 </head>
 <body>
     <form id="myUser">
-        <label for="mail/username">Please enter your email or username:</label><!--frågar om din email-->
-        <input type="text" id="mail/username" name="mail/username">
+        <label for="username">Please enter your email or username:</label><!--frågar om din email-->
+        <input type="text" id="username" name="username">
         <br>
         <label for="password">Enter your password:</label> <!-- frågar efter lösenord-->
         <input type="password" id="password" name="password">
@@ -21,13 +22,13 @@
         const form = document.getElementById('myUser');
         form.addEventListener('submit', function(event){
             event.preventDefault();
-            const text = document.getElementById('mail/username').value;
+            const text = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
             console.log(text + password);
 
             if(text == "Sekiro21"  && password == "Sekiro"){ // användarnamnet är Sekiro21 och lösenordet är Sekiro som är skrivit in så är det sant
-                username == text;
+                username = text;
 
                 window.location.href = `hyraScooter.html?username=${encodeURIComponent(username)}`; // när det är sant så flyttas man till hemsidan hyraScooter
             }
